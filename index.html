@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sevgiliye Date Teklifi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #question {
+      font-size: 24px;
+      margin-top: 50px;
+    }
+    #buttons {
+      margin-top: 20px;
+    }
+    #yesButton, #noButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="question">"Benimle date'e çıkar mısın?"</div>
+  <img src="https://via.placeholder.com/150" alt="Şimşek McQueen" id="mcqueenImage">
+  <div id="buttons">
+    <button id="noButton" onclick="handleNo()">Hayır</button>
+    <button id="yesButton" onclick="handleYes()">Evet</button>
+  </div>
+
+  <script>
+    let noCounter = 0;
+
+    function handleNo() {
+      const noResponses = [
+        "Niye hayır diyonnn",
+        "Kırma beni he de be gülüm",
+        "Kızmaya başlıyorum",
+        "Maçoyum ben unutma",
+        "Nolur desem ?",
+        "Bak bi daha evine bırakmam!! (gerçek)",
+        "Tamam artık evete bas selenim"
+      ];
+
+      const noText = document.getElementById("question");
+      noText.textContent = noResponses[noCounter % noResponses.length];
+      noCounter++;
+
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+      yesButton.style.fontSize = `${16 + noCounter}px`;
+      noButton.style.fontSize = `${24 - noCounter}px`;
+    }
+
+    function handleYes() {
+      const question = document.getElementById("question");
+      const mcqueenImage = document.getElementById("mcqueenImage");
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+
+      question.textContent = "Kaçovvv";
+      mcqueenImage.src = "https://via.placeholder.com/150";
+      mcqueenImage.alt = "Sally";
+      yesButton.style.display = "none";
+      noButton.style.display = "none";
+    }
+  </script>
+</body>
+</html>
